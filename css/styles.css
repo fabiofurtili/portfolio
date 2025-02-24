@@ -661,4 +661,10 @@ form .send-btn:hover {
         object-fit: cover;
         margin: 0 auto;
     }
+    .map-container {
+        height: 220px;
+    }
+    form .send-btn {
+        width: 60%;
+    }
 }
