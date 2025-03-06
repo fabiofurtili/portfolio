@@ -73,38 +73,19 @@ header{
     display: none;
 }
 
-.h-btn {
-    display: inline-block;
-    padding: 11px 26px;
-    background: transparent;
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    transition: all .50s ease;
-}
-
-.h-btn:hover{
-    background: var(--main-color);
-    color: var(--bg-color);
-    box-shadow: 0 0 20px var(--main-color);
-    transform: scale(1.1);
-}
-
 section{
     padding: 110px 16% 90px;
 }
 
 .hero{
+    position: relative;
     height: 100vh;
     width: 100%;
-    background: url(../img/background4.png);
-    background-position: top right;
-    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    overflow: hidden;
+    z-index: 2;
 }
 
 .main-content h4 {
@@ -118,7 +99,51 @@ section{
 }
 
 .main-content h1 span{
-    color: var(--main-color);
+    color: transparent;
+    -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+    position: relative;
+    z-index: 2;
+}
+
+.main-content h1 span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes homeBgText{
+    0%, 10%, 100% {
+        background-position: -25.8rem 0;
+    }
+    65%, 85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText{
+    0%, 10%{
+        width: 0;
+    }
+    65%, 78%, 85% {
+        width: 100%;
+        opacity: 1;
+    }
+    75%, 81% {
+        opacity: 0;
+    }
 }
 
 .main-content p{
@@ -143,11 +168,12 @@ section{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     color: var(--main-color);
     border-radius: 50%;
-    backdrop-filter: brightness(88%);
+    border: 2px solid var(--main-color);
+  
     font-size: 20px;
     margin-right: 17px;
     box-shadow: 0 0 20px transparent;
@@ -177,7 +203,7 @@ section{
     box-shadow: 0 0 20px var(--main-color);
 }
 
-.btn2{
+.btn2, .btn3{
     background: transparent;
     color: var(--main-color);
     border: 2px solid var(--main-color);
@@ -185,7 +211,9 @@ section{
     transition: all .50s ease;
 }
 
-.btn2:hover{
+.btn2:hover,
+.btn3:hover
+{
     background: var(--main-color);
     color: var(--bg-color);
 }
@@ -208,7 +236,7 @@ header.sticky{
     width: 100%;
     height: 400px;
     max-width: 400px;
-    border-radius: 28px;
+    border-radius: 8px;
     object-fit: cover;
     border: 1px solid transparent;
     box-shadow: 0 0 5px var(--main-color);
@@ -231,12 +259,13 @@ header.sticky{
 
 .exp-area{
     margin-bottom: 50px;
+    text-align: start;
 }
 
 .exp-area p{
     color: var(--text-color);
     font-weight: 600;
-    font-size: 19px;
+    font-size: 16px;
     line-height: 42px;
 }
 .exp-area p span{
@@ -268,7 +297,7 @@ header.sticky{
 .box{
     padding: 50px 40px 60px;
     background: #2d343f;
-    border-radius: 28px;
+    border-radius: 8px;
     border: 1px solid transparent;
     box-shadow: 0 0 5px var(--main-color);
     transition: all .50s ease;
@@ -280,7 +309,7 @@ header.sticky{
     width: 60px;
 }
 .box h3 {
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 10px;
 }
@@ -294,7 +323,7 @@ header.sticky{
 }
 .box a {
     display: inline-block;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1.273em;
     font-weight: 700;
     padding: 7px 0;
@@ -305,7 +334,7 @@ header.sticky{
 
 .box i{
     vertical-align: middle;
-    font-size: 25px;
+    font-size: 20px;
     color: var(--main-color);
     margin-left: 5px;
 }
@@ -324,22 +353,22 @@ header.sticky{
 
 .portfolio-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
     align-items: center;
     gap: 2.3rem;
     margin-top: 4.2rem;
 }
 
 .row img{
-    height: auto;
+    height: 90%;
     width: 100%;
-    border-radius: 28px;
+    border-radius: 8px;
     margin-bottom: 1.4rem;
 }
 
 .row{
     background: #2d343f;
-    border-radius: 28px;
+    border-radius: 8px;
     border: 1px solid transparent;
     box-shadow: 0 0 5px var(--main-color);
     padding: 20px;
@@ -354,7 +383,7 @@ header.sticky{
 }
 
 .row h5 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--other-color);
 }
@@ -363,16 +392,13 @@ header.sticky{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 55px;
-    height: 55px;
-    font-size: 27px;
+    font-size: 25px;
     border-radius: 50%;
-    color: var(--text-color);
-    background: #075fe4;
+    color: var(--main-color);
 }
 
 .row h4{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 10px;
     line-height: 1.4;
@@ -525,7 +551,16 @@ form .send-btn:hover {
     .logo{
         font-size: 28px;
     }
+    @keyframes homeBgText {
+        0%, 10%, 100% {
+            background-position: -26rem 0;
+        }
+        65%, 85% {
+            background-position: 0 0;
+        }
+    }
 }
+
 @media (max-width: 1380px) {
     header {
         padding: 20px 5%;
@@ -543,6 +578,14 @@ form .send-btn:hover {
         height: 90vh;
         background-position: center;
     }
+    @keyframes homeBgText {
+        0%, 10%, 100% {
+            background-position: -26rem 0;
+        }
+        65%, 85% {
+            background-position: 0 0;
+        }
+    }
 }
 
 @media (max-width: 1290px) {
@@ -553,6 +596,14 @@ form .send-btn:hover {
         width: 100%;
         height: 60px;
         max-width: 60px;
+    }
+    @keyframes homeBgText {
+        0%, 10%, 100% {
+            background-position: -23rem 0;
+        }
+        65%, 85% {
+            background-position: 0 0;
+        }
     }
 }
 
@@ -618,6 +669,16 @@ form .send-btn:hover {
         right: 0;
     }
 
+
+    .logo {
+        margin-right: auto;
+    }
+
+    #menu-icon {
+        display: block; 
+        margin-right: 5%; 
+    }
+
     .hero {
         background: none;
     }
@@ -637,7 +698,15 @@ form .send-btn:hover {
     }
 
     .map-container {
-        height: 250px; 
+        height: 220px; 
+    }
+    @keyframes homeBgText {
+        0%, 10%, 100% {
+            background-position: -20rem 0;
+        }
+        65%, 85% {
+            background-position: 0 0;
+        }
     }
 }
 
@@ -647,9 +716,34 @@ form .send-btn:hover {
     }
 }
 
-@media (max-width: 470px){
+@media (max-width: 587px){
+    .main-content h1{
+        font-size: 2.8rem;
+    }
+    @keyframes homeBgText {
+        0%, 10%, 100% {
+            background-position: -16rem 0;
+        }
+        65%, 85% {
+            background-position: 0 0;
+        }
+    }
+    .hero {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+}
+
+
+@media (max-width: 473px){
     :root{
-        --h1-font: 3rem;
+        --h1-font: 2rem;
         --h2-font: 2rem;
     }
     .about-img img{
@@ -666,5 +760,16 @@ form .send-btn:hover {
     }
     form .send-btn {
         width: 60%;
+    }
+    .main-content h1{
+        font-size: 2rem;
+    }
+    @keyframes homeBgText {
+        0%, 10%, 100% {
+            background-position: -11.5rem 0;
+        }
+        65%, 85% {
+            background-position: 0 0;
+        }
     }
 }

@@ -64,6 +64,7 @@
 
     <!-- CSS Styles link -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/bghero.css">
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -81,12 +82,12 @@
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#services">Serviços</a></li>
                 <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <!--<li><a href="#contact">Contato</a></li>-->
             </ul>
         </nav>
 
-        <div class="top-btnn">
-            <a href="#contact" class="h-btn" data-aos="fade-left">Contato</a>
+        <div class="top-btn">
+            <a href="#contact" class="btn btn3">Contato</a>
         </div>
     </header>
 
@@ -111,7 +112,7 @@
                             class="bi bi-whatsapp"></i></a>
                 </div>
                 <div class="main-btn">
-                    <a href="#contact" class="btn">Contrate-me</a>
+                    <a href="#contact" class="btn">Contrate me</a>
                     <a href="download/Currículo - Fábio Barbosa Furtili.pdf" class="btn btn2" target="_blank"
                         rel="noopener noreferrer">Download CV</a>
                 </div>
@@ -159,7 +160,6 @@
             </div>
         </section>
         
-
         <!-- Services -->
         <section class="services" id="services">
             <div class="center-text" data-aos="fade-down">
@@ -172,18 +172,17 @@
                     <p>Crio sites modernos e responsivos com HTML, CSS e JavaScript, seguindo boas práticas de SEO para
                         melhor visibilidade. Foco em design atraente, performance e experiência do usuário.</p>
                     <a href="https://github.com/fabiofurtili/" target="_blank" rel="noopener noreferrer">
-                        Acesso ao repositório
-                        <i class="bi bi-arrow-right-short"></i>
+                        Repositórios
+                        <i class="bi bi-github"></i>
                     </a>
                 </div>
                 <div class="box">
                     <img src="img/software-development-furtili.png" alt="Desenvolvimento de Software" loading="lazy">
-                    <h3>Desenvolvimento de Software</h3>
-                    <p>Desenvolvo soluções robustas e escaláveis utilizando Python, JavaScript e TypeScript. Foco em
-                        código limpo, arquitetura eficiente e entrega de alta qualidade.</p>
+                    <h3>Inteligência Artificial</h3>
+                    <p>Desenvolvo soluções de IA, automações inteligentes e evangeliza seu uso e habilita plataformas inovadoras. Tenho experiência com APIs, RAG, serverless e engenharia de prompts.</p>
                     <a href="https://github.com/fabiofurtili/" target="_blank" rel="noopener noreferrer">
-                        Acesso ao repositório
-                        <i class="bi bi-arrow-right-short"></i>
+                        Repositórios
+                        <i class="bi bi-github"></i>
                     </a>
                 </div>
                 <div class="box">
@@ -192,8 +191,8 @@
                     <p>Desenvolvo soluções de dados com Machine Learning, SQL, NoSQL, Python e Hadoop, além de automação de
                         processos. Foco em eficiência, escalabilidade e insights precisos.</p>
                     <a href="https://github.com/fabiofurtili/" target="_blank" rel="noopener noreferrer">
-                        Acesso ao repositório
-                        <i class="bi bi-arrow-right-short"></i>
+                        Repositórios
+                        <i class="bi bi-github"></i>
                     </a>
                 </div>
             </div>
@@ -206,7 +205,7 @@
             </div>
             <div class="portfolio-content" data-aos="zoom-in-up">
                 <div class="row">
-                    <img src="img/web-development.png" alt="Projeto Web para Fotógrafo" loading="lazy">
+                    <img src="img/web-fotografo.png" alt="Projeto Web para Fotógrafo" loading="lazy">
                     <div class="main-row">
                         <div class="row-text">
                             <h5>Desenvolvimento Web</h5>
@@ -221,7 +220,7 @@
                     <h4>Website para Fotografo</h4>
                 </div>
                 <div class="row">
-                    <img src="img/aplication-development.png" alt="Aplicativo de Validação" loading="lazy">
+                    <img src="img/app-calculacom.png" alt="Aplicativo de Validação" loading="lazy">
                     <div class="main-row">
                         <div class="row-text">
                             <h5>App Valida Comissão</h5>
@@ -266,19 +265,7 @@
                     <h4>Template para Developer</h4>
                 </div>
                 <div class="row">
-                    <img src="img/em-contrucao.jpg" alt="Projeto em Construção" loading="lazy">
-                    <div class="main-row">
-                        <div class="row-text">
-                            <h5>Em construção</h5>
-                        </div>
-                        <div class="row-icon">
-                            <a href="javascript:void(0);" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
-                        </div>
-                    </div>
-                    <h4>Em construção</h4>
-                </div>
-                <div class="row">
-                    <img src="img/em-contrucao.jpg" alt="Projeto em Construção" loading="lazy">
+                    <img src="img/em-construcao.png" alt="Projeto em Construção" loading="lazy">
                     <div class="main-row">
                         <div class="row-text">
                             <h5>Em construção</h5>
@@ -297,18 +284,24 @@
             <div class="center-text" data-aos="fade-down">
                 <h2>Entre em <span>Contato</span></h2>
             </div>
-
+        
             <div class="contact-container" data-aos="zoom-in-up">
                 <div class="contact-form">
-                    <form action="">
-                        <input type="text" placeholder="Seu nome" required>
-                        <input type="email" placeholder="Endereço de E-mail" required>
-                        <input type="tel" placeholder="Telefone de contato" required>
-                        <textarea cols="30" rows="10" placeholder="Escreva sua mensagem.." required></textarea>
+                    <form action="https://formsubmit.co/fabiobfurtili@gmail.com" method="POST">
+                        <input type="text" name="name" placeholder="Seu nome" required>
+                        <input type="email" name="email" placeholder="Endereço de E-mail" required>
+                        <input type="tel" name="phone" placeholder="Telefone de contato" required>
+                        <textarea name="message" cols="30" rows="10" placeholder="Escreva sua mensagem.." required></textarea>
+
+                        <input type="hidden" name="_next" value="https://fabiofurtili.github.io/portfolio/obrigado.html"> 
+                        <input type="hidden" name="_captcha" value="false"> 
+                        <input type="hidden" name="_subject" value="Nova mensagem do Portfólio"> 
+                        <input type="hidden" name="_template" value="table"> 
+        
                         <input type="submit" value="Enviar Mensagem" class="send-btn">
                     </form>
                 </div>
-
+        
                 <div class="contact-info-map">
                     <div class="contact-info">
                         <h3>Informação de Contato</h3>
@@ -317,7 +310,7 @@
                         <p>Cidade: Toledo, PR</p>
                         <p>Pais: Brazil</p>
                     </div>
-
+        
                     <div class="map-container">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1812.0523509698937!2d-53.74606038022193!3d-24.723285484463705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1739645693858!5m2!1spt-BR!2sbr"
